@@ -1601,8 +1601,8 @@ importers:
         specifier: ^1.0.0
         version: 1.0.1
       '@types/mailparser':
-        specifier: ^2.7.3
-        version: 2.7.4
+        specifier: ^3.0.0
+        version: 3.0.0
       '@types/mime-types':
         specifier: ^2.1.0
         version: 2.1.1
@@ -6679,8 +6679,8 @@ packages:
     resolution: {integrity: sha512-lGmaGFoaXHuOLXFvuju2bfvZRqxAqkHPx9Y9IQdQABrinJJshJwfNCKV+u7rR3kJbiqfTF/NhOkcxxAFrObyaA==}
     dev: true
 
-  /@types/mailparser@2.7.4:
-    resolution: {integrity: sha512-JGIV4RtcjBO1jsD0RTDoXOmm1zzHr07rWPmNREBBM1oAjjfy99Ne4Y7s/akVSZoksm/JWQMcFQ42LbsufHRVfg==}
+  /@types/mailparser@3.0.0:
+    resolution: {integrity: sha512-LsGznUos/+iY83fVjoduIr3PUGfkgtcEvR7HqXpmiP4TsdZo6jf31EcmjDcROmluj1PDMhWRXOxy4ndkx78wUQ==}
     dependencies:
       '@types/node': 16.18.12
     dev: true
