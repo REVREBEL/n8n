@@ -863,8 +863,8 @@ importers:
         specifier: ^6.5.1
         version: 6.5.1
       '@fontsource/open-sans':
-        specifier: ^4.5.0
-        version: 4.5.12
+        specifier: ^5.0.0
+        version: 5.0.0
       '@fortawesome/fontawesome-svg-core':
         specifier: ^1.2.35
         version: 1.2.36
@@ -3743,8 +3743,8 @@ packages:
     resolution: {integrity: sha512-Ggn6oQmp9WehxK3luwnCQ9eFpogI8kclzF7kxyEUbOO3tPLNwxVsJpRb5C7RlqizqXOZHlxnMmrI7tzgUq52OQ==}
     dev: false
 
-  /@fontsource/open-sans@4.5.12:
-    resolution: {integrity: sha512-WKCexsVbOECJUSOgG7GnrUxe+3ds4Sa1yhsTjSnszI+0TaJvMZnDnn5YDKwA/KwLbkZqCaV3nvMTH97jJuxWNA==}
+  /@fontsource/open-sans@5.0.0:
+    resolution: {integrity: sha512-TS3+1CtAEpfI137qikncQtzo6g08aSm2iY6ebo/Wrp6u5LKeCv3XOo78KViGV/0GBt8G5OCg+sW7vrMFfbBzTQ==}
     dev: false
 
   /@fortawesome/fontawesome-common-types@0.2.36:
