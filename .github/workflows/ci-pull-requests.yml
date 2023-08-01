@@ -12,7 +12,7 @@ jobs:
           repository: n8n-io/n8n
           ref: ${{ inputs.branch }}
 
-      - uses: pnpm/action-setup@v2.2.4
+      - uses: pnpm/action-setup@v2.4.0
 
       - name: Use Node.js 16
         uses: actions/setup-node@v3
@@ -56,7 +56,7 @@ jobs:
             ./packages
           key: ${{ github.sha }}-base:16.18.1-test-lint
 
-      - uses: pnpm/action-setup@v2.2.4
+      - uses: pnpm/action-setup@v2.4.0
 
       - name: Use Node.js 16
         uses: actions/setup-node@v3
@@ -92,7 +92,7 @@ jobs:
             ./packages
           key: ${{ github.sha }}-base:16.18.1-test-lint
 
-      - uses: pnpm/action-setup@v2.2.4
+      - uses: pnpm/action-setup@v2.4.0
 
       - name: Use Node.js 16
         uses: actions/setup-node@v3

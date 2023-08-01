@@ -26,7 +26,7 @@ jobs:
           repository: n8n-io/test-workflows
           path: test-workflows
 
-      - uses: pnpm/action-setup@v2.2.4
+      - uses: pnpm/action-setup@v2.4.0
         with:
           version: 8.1.0
 

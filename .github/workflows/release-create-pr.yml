@@ -39,7 +39,7 @@ jobs:
           git checkout -b "release/${{ github.event.inputs.release-type }}"
           git push -f origin "release/${{ github.event.inputs.release-type }}"
 
-      - uses: pnpm/action-setup@v2.2.4
+      - uses: pnpm/action-setup@v2.4.0
       - uses: actions/setup-node@v3
         with:
           node-version: 16.x
