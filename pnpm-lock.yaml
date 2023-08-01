@@ -1068,8 +1068,8 @@ importers:
         specifier: ^0.28.5
         version: 0.28.5(sass@1.55.0)(terser@5.16.1)
       '@volar-plugins/eslint':
-        specifier: ^0.0.4
-        version: 0.0.4(eslint@8.39.0)
+        specifier: ^2.0.0
+        version: 2.0.0(eslint@8.39.0)
       c8:
         specifier: ^7.12.0
         version: 7.12.0
@@ -7394,12 +7394,16 @@ packages:
       pretty-format: 27.5.1
     dev: true
 
-  /@volar-plugins/eslint@0.0.4(eslint@8.39.0):
-    resolution: {integrity: sha512-CjvOHSPOyfMv4mgjFk0JOsnq0yWj4LaHb7n4bjNWqqhdwPWmaUEK5AbOloBRxix0736Z3OimH8GMjHNlMcbeiw==}
+  /@volar-plugins/eslint@2.0.0(eslint@8.39.0):
+    resolution: {integrity: sha512-gGYyfR8LKkr6Y698hDx6+LDMPFT97sdLGBl2DSu7oXjPz/dxIWVREChPLf3YB7ainGj4Qjh2rDOrXsPAd8tnQw==}
+    deprecated: 'WARNING: This project has been renamed to volar-service-eslint. Install using volar-service-eslint instead.'
     peerDependencies:
+      '@volar/language-service': '*'
       eslint: '*'
+    peerDependenciesMeta:
+      '@volar/language-service':
+        optional: true
     dependencies:
-      '@volar/shared': 1.0.24
       eslint: 8.39.0
     dev: true
 
@@ -7408,13 +7412,6 @@ packages:
     dependencies:
       '@volar/source-map': 1.0.24
       muggle-string: 0.1.0
-    dev: true
-
-  /@volar/shared@1.0.24:
-    resolution: {integrity: sha512-30mqmNsw49xlGhziL59z6kP6/TlBatkeOzMImUSWmn1QtqV7r2onDGgNNdCqSa1esTo4UtGup6yqqM2oUwrMSQ==}
-    dependencies:
-      typesafe-path: 0.2.2
-      vscode-uri: 3.0.7
     dev: true
 
   /@volar/source-map@1.0.24:
@@ -20880,10 +20877,6 @@ packages:
       - supports-color
     dev: false
 
-  /typesafe-path@0.2.2:
-    resolution: {integrity: sha512-OJabfkAg1WLZSqJAJ0Z6Sdt3utnbzr/jh+NAHoyWHJe8CMSy79Gm085094M9nvTPy22KzTVn5Zq5mbapCI/hPA==}
-    dev: true
-
   /typescript@5.0.3:
     resolution: {integrity: sha512-xv8mOEDnigb/tN9PSMTwSEqAnUvkoXMQlicOb0IUVDBSQCgBSaAAROUZYy2IcUy5qU6XajK5jjjO7TMWqBTKZA==}
     engines: {node: '>=12.20'}
@@ -21562,10 +21555,6 @@ packages:
   /void-elements@3.1.0:
     resolution: {integrity: sha512-Dhxzh5HZuiHQhbvTW9AMetFfBHDMYpo23Uo9btPXgdYP+3T5S+p+jgNy7spra+veYhBP2dCSgxR/i2Y02h5/6w==}
     engines: {node: '>=0.10.0'}
-    dev: true
-
-  /vscode-uri@3.0.7:
-    resolution: {integrity: sha512-eOpPHogvorZRobNqJGhapa0JdwaxpjVvyBp0QIUMRMSf8ZAlqOdEquKuRmw9Qwu0qXtJIWqFtMkmvJjUZmMjVA==}
     dev: true
 
   /vue-agile@2.0.0:
