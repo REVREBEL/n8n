@@ -408,6 +408,64 @@ export async function initEncryptionKey() {
 	}
 }
 
+// ----------------------------------
+//           request agent
+// ----------------------------------
+
+/**
+ * Create a request agent, optionally with an auth cookie.
+ */
+export function createAgent(
+	app: express.Application,
+	options?: { auth: boolean; user: User; apiPath?: ApiPath; version?: string | number },
+) {
+	const agent = request.agent(app);
+
+	if (options?.apiPath === undefined || options?.apiPath === 'internal') {
+		void agent.use(prefix(REST_PATH_SEGMENT));
+		if (options?.auth && options?.user) {
+			try {
+				const { token } = issueJWT(options.user);
+				agent.jar.setCookie(`${AUTH_COOKIE_NAME}=${token}`);
+			} catch {}
+		}
+	}
+
+	if (options?.apiPath === 'public') {
+		void agent.use(prefix(`${PUBLIC_API_REST_PATH_SEGMENT}/v${options?.version}`));
+
+		if (options?.auth && options?.user.apiKey) {
+			void agent.set({ 'X-N8N-API-KEY': options.user.apiKey });
+		}
+	}
+
+	return agent;
+}
+
+export function createAuthAgent(app: express.Application) {
+	return (user: User) => createAgent(app, { auth: true, user });
+}
+
+/**
+ * Plugin to prefix a path segment into a request URL pathname.
+ *
+ * Example: http://127.0.0.1:62100/me/password → http://127.0.0.1:62100/rest/me/password
+ */
+export function prefix(pathSegment: string) {
+	return async function (request: superagent.SuperAgentRequest) {
+		const url = new URL(request.url);
+
+		// enforce consistency at call sites
+		if (url.pathname[0] !== '/') {
+			throw new Error('Pathname must start with a forward slash');
+		}
+
+		url.pathname = pathSegment + url.pathname;
+		request.url = url.toString();
+		return request;
+	};
+}
+
 /**
  * Extract the value (token) of the auth cookie in a response.
  */

@@ -39,7 +39,6 @@ import { MigrateIntegerKeysToString1690000000002 } from './1690000000002-Migrate
 import { SeparateExecutionData1690000000010 } from './1690000000010-SeparateExecutionData';
 import { RemoveSkipOwnerSetup1681134145997 } from './1681134145997-RemoveSkipOwnerSetup';
 import { FixMissingIndicesFromStringIdMigration1690000000020 } from './1690000000020-FixMissingIndicesFromStringIdMigration';
-import { RemoveResetPasswordColumns1690000000030 } from './1690000000030-RemoveResetPasswordColumns';
 
 const sqliteMigrations: Migration[] = [
 	InitialMigration1588102412422,
@@ -82,7 +81,6 @@ const sqliteMigrations: Migration[] = [
 	SeparateExecutionData1690000000010,
 	RemoveSkipOwnerSetup1681134145997,
 	FixMissingIndicesFromStringIdMigration1690000000020,
-	RemoveResetPasswordColumns1690000000030,
 ];
 
 export { sqliteMigrations };

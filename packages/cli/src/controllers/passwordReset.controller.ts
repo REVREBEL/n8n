@@ -28,8 +28,6 @@ import { UserService } from '@/user/user.service';
 import { License } from '@/License';
 import { Container } from 'typedi';
 import { RESPONSE_ERROR_MESSAGES } from '@/constants';
-import { TokenExpiredError } from 'jsonwebtoken';
-import type { JwtService, JwtPayload } from '@/services/jwt.service';
 
 @RestController()
 export class PasswordResetController {
@@ -206,19 +204,19 @@ export class PasswordResetController {
 
 		const user = await this.userRepository.findOne({
 			where: {
-				id: decodedToken.sub,
+				id,
+				resetPasswordToken,
+				resetPasswordTokenExpiration: MoreThanOrEqual(currentTimestamp),
 			},
 			relations: ['globalRole'],
 		});
-
 		if (!user?.isOwner && !Container.get(License).isWithinUsersLimit()) {
 			this.logger.debug(
 				'Request to resolve password token failed because the user limit was reached',
-				{ userId: decodedToken.sub },
+				{ userId: id },
 			);
 			throw new UnauthorizedError(RESPONSE_ERROR_MESSAGES.USERS_QUOTA_REACHED);
 		}
-
 		if (!user) {
 			this.logger.debug(
 				'Request to resolve password token failed because no user was found for the provided user ID',

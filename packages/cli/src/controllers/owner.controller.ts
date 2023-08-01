@@ -125,10 +125,12 @@ export class OwnerController {
 		return sanitizeUser(owner);
 	}
 
-	@Post('/dismiss-banner')
-	async dismissBanner(req: OwnerRequest.DismissBanner) {
-		const bannerName = 'banner' in req.body ? (req.body.banner as string) : '';
-		const response = await this.settingsRepository.dismissBanner({ bannerName });
-		return response;
+	@Post('/dismiss-v1')
+	async dismissBanner() {
+		const value = JSON.stringify(['V1']);
+		await this.settingsRepository.saveSetting('ui.banners.dismissed', value);
+		this.config.set('ui.banners.dismissed', value);
+
+		return { success: true };
 	}
 }

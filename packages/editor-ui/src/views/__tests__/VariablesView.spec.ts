@@ -13,8 +13,6 @@ describe('VariablesView', () => {
 	let settingsStore: ReturnType<typeof useSettingsStore>;
 	let usersStore: ReturnType<typeof useUsersStore>;
 
-	const renderComponent = createComponentRenderer(VariablesView);
-
 	beforeAll(() => {
 		server = setupServer();
 	});
@@ -42,12 +40,12 @@ describe('VariablesView', () => {
 
 	describe('should render empty state', () => {
 		it('when feature is enabled and logged in user is owner', async () => {
-			settingsStore.settings.enterprise[EnterpriseEditionFeature.Variables] = true;
+			vi.spyOn(settingsStore, 'isEnterpriseFeatureEnabled').mockReturnValue(true);
 			vi.spyOn(usersStore, 'currentUser', 'get').mockReturnValue({
 				isOwner: true,
 			});
 
-			const { queryByTestId } = renderComponent({ pinia });
+			const { queryByTestId } = renderComponent(VariablesView, { pinia });
 
 			await waitFor(() => {
 				expect(queryByTestId('empty-resources-list')).toBeVisible();
@@ -57,7 +55,7 @@ describe('VariablesView', () => {
 		});
 
 		it('when feature is disabled and logged in user is owner', async () => {
-			settingsStore.settings.enterprise[EnterpriseEditionFeature.Variables] = false;
+			vi.spyOn(settingsStore, 'isEnterpriseFeatureEnabled').mockReturnValue(false);
 			vi.spyOn(usersStore, 'currentUser', 'get').mockReturnValue({
 				isOwner: true,
 			});
@@ -72,7 +70,7 @@ describe('VariablesView', () => {
 		});
 
 		it('when feature is eanbled and logged in user is not owner', async () => {
-			settingsStore.settings.enterprise[EnterpriseEditionFeature.Variables] = true;
+			vi.spyOn(settingsStore, 'isEnterpriseFeatureEnabled').mockReturnValue(true);
 			vi.spyOn(usersStore, 'currentUser', 'get').mockReturnValue({
 				isDefaultUser: true,
 			});

@@ -1,4 +1,5 @@
-import type { MigrationContext, ReversibleMigration } from '@db/types';
+import type { MigrationContext, ReversibleMigration } from '@/databases/types';
+import { copyTable } from '@/databases/utils/migrationHelpers';
 
 export class SeparateExecutionData1690000000010 implements ReversibleMigration {
 	async up(context: MigrationContext): Promise<void> {
@@ -13,7 +14,8 @@ export class SeparateExecutionData1690000000010 implements ReversibleMigration {
 			)`,
 		);
 
-		await context.copyTable(
+		await copyTable(
+			{ tablePrefix, queryRunner },
 			'execution_entity',
 			'execution_data',
 			['id', 'workflowData', 'data'],

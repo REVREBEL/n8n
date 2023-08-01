@@ -1,6 +1,7 @@
 import type { SuperAgentTest } from 'supertest';
 import * as testDb from './shared/testDb';
-import * as utils from './shared/utils/';
+import * as utils from './shared/utils';
+import config from '@/config';
 
 describe('Auth Middleware', () => {
 	const testServer = utils.setupTestServer({ endpointGroups: ['me', 'auth', 'owner', 'users'] });
@@ -14,13 +15,11 @@ describe('Auth Middleware', () => {
 		['GET', '/non-existent'],
 	];
 
-	/** Routes requiring a valid `n8n-auth` cookie for an owner. */
-	const ROUTES_REQUIRING_AUTHORIZATION: Readonly<Array<[string, string]>> = [
-		['POST', '/users'],
-		['DELETE', '/users/123'],
-		['POST', '/users/123/reinvite'],
-		['POST', '/owner/setup'],
-	];
+	authlessAgent = utils.createAgent(app);
+	authMemberAgent = utils.createAuthAgent(app)(member);
+
+	config.set('userManagement.isInstanceOwnerSetUp', true);
+});
 
 	describe('Routes requiring Authentication', () => {
 		ROUTES_REQUIRING_AUTHENTICATION.concat(ROUTES_REQUIRING_AUTHORIZATION).forEach(

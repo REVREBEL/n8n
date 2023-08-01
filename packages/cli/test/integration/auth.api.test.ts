@@ -70,7 +70,7 @@ describe('POST /login', () => {
 		jest.spyOn(Container.get(License), 'isWithinUsersLimit').mockReturnValueOnce(false);
 		const member = await testDb.createUserShell(globalMemberRole);
 
-		const response = await testServer.authAgentFor(member).get('/login');
+		const response = await authAgent(member).get('/login');
 		expect(response.statusCode).toBe(401);
 	});
 
@@ -82,7 +82,7 @@ describe('POST /login', () => {
 			isOwner: true,
 		});
 
-		const response = await testServer.authAgentFor(ownerUser).get('/login');
+		const response = await authAgent(ownerUser).get('/login');
 		expect(response.statusCode).toBe(200);
 	});
 });

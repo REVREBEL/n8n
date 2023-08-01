@@ -413,7 +413,7 @@ export class Server extends AbstractServer {
 		let dismissedBanners: string[] = [];
 
 		try {
-			dismissedBanners = config.getEnv('ui.banners.dismissed') ?? [];
+			v1Dismissed = (config.getEnv('ui.banners.dismissed') ?? []).includes('V1');
 		} catch {
 			// not yet in DB
 		}

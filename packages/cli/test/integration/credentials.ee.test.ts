@@ -11,11 +11,9 @@ import type { Role } from '@db/entities/Role';
 import type { User } from '@db/entities/User';
 import { randomCredentialPayload } from './shared/random';
 import * as testDb from './shared/testDb';
-import type { SaveCredentialFunction } from './shared/types';
-import * as utils from './shared/utils/';
-
-const sharingSpy = jest.spyOn(UserManagementHelpers, 'isSharingEnabled').mockReturnValue(true);
-const testServer = utils.setupTestServer({ endpointGroups: ['credentials'] });
+import type { AuthAgent, SaveCredentialFunction } from './shared/types';
+import * as utils from './shared/utils';
+import config from '@/config';
 
 let globalMemberRole: Role;
 let owner: User;
@@ -34,6 +32,8 @@ beforeAll(async () => {
 	authOwnerAgent = testServer.authAgentFor(owner);
 
 	saveCredential = testDb.affixRoleToSaveCredential(credentialOwnerRole);
+	sharingSpy = jest.spyOn(UserManagementHelpers, 'isSharingEnabled').mockReturnValue(true);
+	config.set('userManagement.isInstanceOwnerSetUp', true);
 });
 
 beforeEach(async () => {

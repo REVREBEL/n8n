@@ -1,6 +1,6 @@
 <template>
 	<div :class="['n8n-menu-item', $style.item]">
-		<el-sub-menu
+		<el-submenu
 			v-if="item.children?.length"
 			:id="item.id"
 			:class="{
@@ -22,17 +22,16 @@
 				<span :class="$style.label">{{ item.label }}</span>
 			</template>
 			<n8n-menu-item
-				v-for="child in availableChildren"
-				:key="child.id"
-				:item="child"
-				:compact="false"
+				v-for="item in availableChildren"
+				:key="item.id"
+				:item="item"
+				:compact="compact"
 				:tooltipDelay="tooltipDelay"
 				:popperClass="popperClass"
 				:mode="mode"
 				:activeTab="activeTab"
-				:handle-select="handleSelect"
 			/>
-		</el-sub-menu>
+		</el-submenu>
 		<n8n-tooltip
 			v-else
 			placement="right"
@@ -66,7 +65,7 @@
 					:placement="item.secondaryIcon?.tooltip?.placement || 'right'"
 					:content="item.secondaryIcon?.tooltip?.content"
 					:disabled="compact || !item.secondaryIcon?.tooltip?.content"
-					:show-after="tooltipDelay"
+					:open-delay="tooltipDelay"
 				>
 					<n8n-icon :icon="item.secondaryIcon.name" :size="item.secondaryIcon.size || 'small'" />
 				</n8n-tooltip>

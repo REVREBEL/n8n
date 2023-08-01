@@ -7,6 +7,7 @@ import { getCurrentAuthenticationMethod, setCurrentAuthenticationMethod } from '
 import { SamlUrls } from '@/sso/saml/constants';
 import { InternalHooks } from '@/InternalHooks';
 import { SamlService } from '@/sso/saml/saml.service.ee';
+import config from '@/config';
 import type { SamlUserAttributes } from '@/sso/saml/types/samlUserAttributes';
 
 import { randomEmail, randomName, randomValidPassword } from '../shared/random';
@@ -23,9 +24,16 @@ async function enableSaml(enable: boolean) {
 	await setSamlLoginEnabled(enable);
 }
 
-const testServer = utils.setupTestServer({
-	endpointGroups: ['me', 'saml'],
-	enabledFeatures: ['feat:saml'],
+beforeAll(async () => {
+	Container.get(License).isSamlEnabled = () => true;
+	const app = await utils.initTestServer({ endpointGroups: ['me', 'saml'] });
+	owner = await testDb.createOwner();
+	someUser = await testDb.createUser();
+	authOwnerAgent = utils.createAuthAgent(app)(owner);
+	authMemberAgent = utils.createAgent(app, { auth: true, user: someUser });
+	noAuthMemberAgent = utils.createAgent(app, { auth: false, user: someUser });
+
+	config.set('userManagement.isInstanceOwnerSetUp', true);
 });
 
 beforeAll(async () => {

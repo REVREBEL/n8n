@@ -12,6 +12,9 @@ import { createWorkflow, getGlobalMemberRole, getGlobalOwnerRole } from './share
 import type { SaveCredentialFunction } from './shared/types';
 import { makeWorkflow } from './shared/utils/';
 import { randomCredentialPayload } from './shared/random';
+import { License } from '@/License';
+import { getSharedWorkflowIds } from '../../src/WorkflowHelpers';
+import config from '@/config';
 
 let owner: User;
 let member: User;
@@ -43,6 +46,7 @@ beforeAll(async () => {
 	saveCredential = testDb.affixRoleToSaveCredential(credentialOwnerRole);
 
 	await utils.initNodeTypes();
+	config.set('userManagement.isInstanceOwnerSetUp', true);
 });
 
 beforeEach(async () => {

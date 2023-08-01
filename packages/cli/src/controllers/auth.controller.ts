@@ -31,6 +31,7 @@ import {
 } from '@/sso/ssoHelpers';
 import type { UserRepository } from '@db/repositories';
 import { InternalHooks } from '../InternalHooks';
+import Container from 'typedi';
 import { License } from '@/License';
 
 @RestController()

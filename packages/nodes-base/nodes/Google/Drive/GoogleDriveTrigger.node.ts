@@ -12,7 +12,7 @@ import { NodeApiError } from 'n8n-workflow';
 import { extractId, googleApiRequest, googleApiRequestAllItems } from './v1/GenericFunctions';
 
 import moment from 'moment';
-import { fileSearch, folderSearch } from './v1/SearchFunctions';
+import { fileSearch, folderSearch } from './SearchFunctions';
 import { GOOGLE_DRIVE_FILE_URL_REGEX, GOOGLE_DRIVE_FOLDER_URL_REGEX } from '../constants';
 
 export class GoogleDriveTrigger implements INodeType {

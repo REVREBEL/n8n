@@ -1,4 +1,3 @@
-import { Container } from 'typedi';
 import { readFileSync, rmSync } from 'fs';
 import { UserSettings } from 'n8n-core';
 import type { ObjectLiteral } from 'typeorm';
@@ -6,9 +5,6 @@ import type { QueryRunner } from 'typeorm/query-runner/QueryRunner';
 import config from '@/config';
 import { inTest } from '@/constants';
 import type { BaseMigration, Migration, MigrationContext, MigrationFn } from '@db/types';
-import { getLogger } from '@/Logger';
-import { NodeTypes } from '@/NodeTypes';
-import { jsonParse } from 'n8n-workflow';
 
 const logger = getLogger();
 
@@ -81,6 +77,19 @@ const runDisablingForeignKeys = async (
 		await queryRunner.query('PRAGMA foreign_keys=ON');
 	}
 };
+
+export const wrapMigration = (migration: Migration) => {
+	const dbType = config.getEnv('database.type');
+	const dbName = config.getEnv(`database.${dbType === 'mariadb' ? 'mysqldb' : dbType}.database`);
+	const tablePrefix = config.getEnv('database.tablePrefix');
+	const migrationName = migration.name;
+	const context: Omit<MigrationContext, 'queryRunner'> = {
+		tablePrefix,
+		dbType,
+		dbName,
+		migrationName,
+		logger,
+	};
 
 function parseJson<T>(data: string | T): T {
 	return typeof data === 'string' ? jsonParse<T>(data) : data;
@@ -178,24 +187,98 @@ export const wrapMigration = (migration: Migration) => {
 	const { up, down } = migration.prototype;
 	Object.assign(migration.prototype, {
 		async up(this: BaseMigration, queryRunner: QueryRunner) {
-			logMigrationStart(migration.name);
-			const context = createContext(queryRunner, migration);
+			logMigrationStart(migrationName);
 			if (this.transaction === false) {
-				await runDisablingForeignKeys(this, context, up);
+				await runDisablingForeignKeys(this, { queryRunner, ...context }, up);
 			} else {
-				await up.call(this, context);
+				await up.call(this, { queryRunner, ...context });
 			}
-			logMigrationEnd(migration.name);
+			logMigrationEnd(migrationName);
 		},
 		async down(this: BaseMigration, queryRunner: QueryRunner) {
 			if (down) {
-				const context = createContext(queryRunner, migration);
 				if (this.transaction === false) {
-					await runDisablingForeignKeys(this, context, up);
+					await runDisablingForeignKeys(this, { queryRunner, ...context }, up);
 				} else {
-					await down.call(this, context);
+					await down.call(this, { queryRunner, ...context });
 				}
 			}
 		},
 	});
 };
+
+export const copyTable = async (
+	{ tablePrefix, queryRunner }: Pick<MigrationContext, 'queryRunner' | 'tablePrefix'>,
+	fromTable: string,
+	toTable: string,
+	fromFields: string[] = [],
+	toFields: string[] = [],
+	batchSize = 10,
+) => {
+	const driver = queryRunner.connection.driver;
+	fromTable = driver.escape(`${tablePrefix}${fromTable}`);
+	toTable = driver.escape(`${tablePrefix}${toTable}`);
+	const fromFieldsStr = fromFields.length
+		? fromFields.map((f) => driver.escape(f)).join(', ')
+		: '*';
+	const toFieldsStr = toFields.length
+		? `(${toFields.map((f) => driver.escape(f)).join(', ')})`
+		: '';
+
+	const total = await queryRunner
+		.query(`SELECT COUNT(*) as count from ${fromTable}`)
+		.then((rows: Array<{ count: number }>) => rows[0].count);
+
+	let migrated = 0;
+	while (migrated < total) {
+		await queryRunner.query(
+			`INSERT INTO ${toTable} ${toFieldsStr} SELECT ${fromFieldsStr} FROM ${fromTable} LIMIT ${migrated}, ${batchSize}`,
+		);
+		migrated += batchSize;
+	}
+};
+
+function batchQuery(query: string, limit: number, offset = 0): string {
+	return `
+			${query}
+			LIMIT ${limit}
+			OFFSET ${offset}
+		`;
+}
+
+export async function runInBatches(
+	queryRunner: QueryRunner,
+	query: string,
+	// eslint-disable-next-line @typescript-eslint/no-explicit-any
+	operation: (results: any[]) => Promise<void>,
+	limit = 100,
+): Promise<void> {
+	let offset = 0;
+	let batchedQuery: string;
+	let batchedQueryResults: unknown[];
+
+	// eslint-disable-next-line no-param-reassign
+	if (query.trim().endsWith(';')) query = query.trim().slice(0, -1);
+
+	do {
+		batchedQuery = batchQuery(query, limit, offset);
+		batchedQueryResults = (await queryRunner.query(batchedQuery)) as unknown[];
+		// pass a copy to prevent errors from mutation
+		await operation([...batchedQueryResults]);
+		offset += limit;
+	} while (batchedQueryResults.length === limit);
+}
+
+export const escapeQuery = (
+	queryRunner: QueryRunner,
+	query: string,
+	params: { [property: string]: unknown },
+): [string, unknown[]] =>
+	queryRunner.connection.driver.escapeQueryWithParameters(
+		query,
+		{
+			pinData: params.pinData,
+			id: params.id,
+		},
+		{},
+	);

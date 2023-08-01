@@ -35,8 +35,11 @@ beforeAll(async () => {
 
 	saveCredential = testDb.affixRoleToSaveCredential(credentialOwnerRole);
 
-	authOwnerAgent = testServer.authAgentFor(owner);
-	authMemberAgent = testServer.authAgentFor(member);
+	authAgent = utils.createAuthAgent(app);
+	authOwnerAgent = authAgent(owner);
+	authMemberAgent = authAgent(member);
+
+	config.set('userManagement.isInstanceOwnerSetUp', true);
 });
 
 beforeEach(async () => {

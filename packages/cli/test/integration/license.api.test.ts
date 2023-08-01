@@ -25,6 +25,7 @@ beforeAll(async () => {
 	authOwnerAgent = testServer.authAgentFor(owner);
 	authMemberAgent = testServer.authAgentFor(member);
 
+	config.set('userManagement.isInstanceOwnerSetUp', true);
 	config.set('license.serverUrl', MOCK_SERVER_URL);
 	config.set('license.autoRenewEnabled', true);
 	config.set('license.autoRenewOffset', MOCK_RENEW_OFFSET);

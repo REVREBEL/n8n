@@ -171,9 +171,6 @@ export const useSettingsStore = defineStore(STORES.SETTINGS, {
 		isDefaultAuthenticationSaml(): boolean {
 			return this.userManagement.authenticationMethod === UserManagementAuthenticationMethod.Saml;
 		},
-		permanentlyDismissedBanners(): string[] {
-			return this.settings.banners?.dismissed ?? [];
-		},
 		isBelowUserQuota(): boolean {
 			const userStore = useUsersStore();
 			return (

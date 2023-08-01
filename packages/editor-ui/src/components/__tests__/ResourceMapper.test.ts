@@ -9,7 +9,6 @@ import { waitAllPromises } from '@/__tests__/utils';
 import * as workflowHelpers from '@/mixins/workflowHelpers';
 import ResourceMapper from '@/components/ResourceMapper/ResourceMapper.vue';
 import userEvent from '@testing-library/user-event';
-import { createComponentRenderer } from '@/__tests__/render';
 import type { SpyInstance } from 'vitest';
 
 let nodeTypeStore: ReturnType<typeof useNodeTypesStore>;

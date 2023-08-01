@@ -1,4 +1,4 @@
-import type { ElTooltipProps } from 'element-plus';
+import type { Tooltip } from 'element-ui';
 
 export type IMenuItem = {
 	id: string;
@@ -7,7 +7,7 @@ export type IMenuItem = {
 	secondaryIcon?: {
 		name: string;
 		size?: 'xsmall' | 'small' | 'medium' | 'large' | 'xlarge';
-		tooltip?: ElTooltipProps;
+		tooltip?: Tooltip;
 	};
 	customIconSize?: 'medium' | 'small';
 	available?: boolean;

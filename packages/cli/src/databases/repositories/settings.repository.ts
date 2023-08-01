@@ -29,6 +29,5 @@ export class SettingsRepository extends Repository<Settings> {
 		} catch (error) {
 			ErrorReporter.error(error);
 		}
-		return { success: false };
 	}
 }

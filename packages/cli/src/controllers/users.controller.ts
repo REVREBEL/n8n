@@ -49,7 +49,6 @@ import { plainToInstance } from 'class-transformer';
 import { License } from '@/License';
 import { Container } from 'typedi';
 import { RESPONSE_ERROR_MESSAGES } from '@/constants';
-import type { JwtService } from '@/services/jwt.service';
 
 @Authorized(['global', 'owner'])
 @RestController('/users')

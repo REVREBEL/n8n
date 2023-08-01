@@ -1,5 +1,11 @@
-import type { SuperAgentTest } from 'supertest';
-import type { Variables } from '@db/entities/Variables';
+import type { Application } from 'express';
+
+import type { User } from '@/databases/entities/User';
+import * as testDb from './shared/testDb';
+import * as utils from './shared/utils';
+import config from '@/config';
+
+import type { AuthAgent } from './shared/types';
 import { License } from '@/License';
 import * as testDb from './shared/testDb';
 import * as utils from './shared/utils/';
@@ -19,10 +25,11 @@ beforeAll(async () => {
 	await utils.initEncryptionKey();
 	utils.mockInstance(License, licenseLike);
 
-	const owner = await testDb.createOwner();
-	authOwnerAgent = testServer.authAgentFor(owner);
-	const member = await testDb.createUser();
-	authMemberAgent = testServer.authAgentFor(member);
+	ownerUser = await testDb.createOwner();
+	memberUser = await testDb.createUser();
+
+	authAgent = utils.createAuthAgent(app);
+	config.set('userManagement.isInstanceOwnerSetUp', true);
 });
 
 beforeEach(async () => {

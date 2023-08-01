@@ -288,7 +288,12 @@ export class WorkflowPage extends BasePage {
 			this.getters.stickies().eq(0).realHover().find('[data-test-id="delete-sticky"]').click();
 		},
 		editSticky: (content: string) => {
-			this.getters.stickies().dblclick().find('textarea').clear().type(content).type('{esc}');
+			this.getters.stickies()
+				.dblclick()
+				.find('textarea')
+				.clear()
+				.type(content)
+				.type('{esc}');
 		},
 	};
 }

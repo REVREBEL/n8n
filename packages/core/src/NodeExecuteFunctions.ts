@@ -2336,18 +2336,8 @@ const getFileSystemHelperFunctions = (node: INode): FileSystemHelperFunctions =>
 		}
 		return createReadStream(filePath);
 	},
-
 	getStoragePath() {
 		return path.join(getUserN8nFolderPath(), `storage/${node.type}`);
-	},
-
-	async writeContentToFile(filePath, content, flag) {
-		if (isFilePathBlocked(filePath as string)) {
-			throw new NodeOperationError(node, `The file "${String(filePath)}" is not writable.`, {
-				severity: 'warning',
-			});
-		}
-		return fsWriteFile(filePath, content, { encoding: 'binary', flag });
 	},
 });
 
