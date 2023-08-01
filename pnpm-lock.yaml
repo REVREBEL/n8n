@@ -615,8 +615,8 @@ importers:
         specifier: ^2.0.0
         version: 2.0.0
       cron:
-        specifier: ~1.7.2
-        version: 1.7.2
+        specifier: ~1.8.0
+        version: 1.8.0
       crypto-js:
         specifier: ~4.1.1
         version: 4.1.1
@@ -1174,8 +1174,8 @@ importers:
         specifier: 3.5.2
         version: 3.5.2
       cron:
-        specifier: ~1.7.2
-        version: 1.7.2
+        specifier: ~1.8.0
+        version: 1.8.0
       currency-codes:
         specifier: ^2.1.0
         version: 2.1.0
@@ -10066,8 +10066,8 @@ packages:
       luxon: 3.3.0
     dev: false
 
-  /cron@1.7.2:
-    resolution: {integrity: sha512-+SaJ2OfeRvfQqwXQ2kgr0Y5pzBR/lijf5OpnnaruwWnmI799JfWr2jN2ItOV9s3A/+TFOt6mxvKzQq5F0Jp6VQ==}
+  /cron@1.8.0:
+    resolution: {integrity: sha512-PXjQSUCAWiPxuq0aJifucTZR4NGKJajALaWgr/tGq6OPZT9THhpSNznfC994WxO69nYbEvF9scWPbluDsJlcRA==}
     dependencies:
       moment-timezone: 0.5.37
     dev: false
