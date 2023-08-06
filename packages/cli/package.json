@@ -135,7 +135,7 @@
     "class-validator": "^0.14.0",
     "client-oauth2": "^4.2.5",
     "compression": "^1.7.4",
-    "connect-history-api-fallback": "^1.6.0",
+    "connect-history-api-fallback": "^2.0.0",
     "convict": "^6.2.4",
     "cookie-parser": "^1.4.6",
     "crypto-js": "~4.1.1",
