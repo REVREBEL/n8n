@@ -128,8 +128,8 @@ importers:
         specifier: ~5.59
         version: 5.59.0(eslint@8.39.0)(typescript@5.0.3)
       '@vue/eslint-config-typescript':
-        specifier: ~8.0
-        version: 8.0.0(@typescript-eslint/eslint-plugin@5.59.0)(@typescript-eslint/parser@5.59.0)(eslint-plugin-vue@7.17.0)(eslint@8.39.0)(typescript@5.0.3)
+        specifier: ~11.0.0
+        version: 11.0.0(eslint-plugin-vue@7.17.0)(eslint@8.39.0)(typescript@5.0.3)
       eslint:
         specifier: ~8.39
         version: 8.39.0
@@ -7566,14 +7566,12 @@ packages:
   /@vue/devtools-api@6.4.5:
     resolution: {integrity: sha512-JD5fcdIuFxU4fQyXUu3w2KpAJHzTVdN+p4iOX2lMWSHMOoQdMAcpFLZzm9Z/2nmsoZ1a96QEhZ26e50xLBsgOQ==}
 
-  /@vue/eslint-config-typescript@8.0.0(@typescript-eslint/eslint-plugin@5.59.0)(@typescript-eslint/parser@5.59.0)(eslint-plugin-vue@7.17.0)(eslint@8.39.0)(typescript@5.0.3):
-    resolution: {integrity: sha512-8u8Qpg4qfjJoNeRMdHlxif9BcGy4iYSSK4YYW5AFPPRtkBJiCqtoyT72l4F3ZeZII09ax2N6yQeHbQ0CXQi1bA==}
-    engines: {node: ^10.12.0 || >=12.0.0}
+  /@vue/eslint-config-typescript@11.0.0(eslint-plugin-vue@7.17.0)(eslint@8.39.0)(typescript@5.0.3):
+    resolution: {integrity: sha512-txuRzxnQVmtUvvy9UyWUy9sHWXNeRPGmSPqP53hRtaiUeCTAondI9Ho9GQYI/8/eWljYOST7iA4Aa8sANBkWaA==}
+    engines: {node: ^14.17.0 || >=16.0.0}
     peerDependencies:
-      '@typescript-eslint/eslint-plugin': ^5.0.0
-      '@typescript-eslint/parser': ^5.0.0
       eslint: ^6.2.0 || ^7.0.0 || ^8.0.0
-      eslint-plugin-vue: ^7.17.0
+      eslint-plugin-vue: ^9.0.0
       typescript: '*'
     peerDependenciesMeta:
       typescript:
@@ -7584,7 +7582,7 @@ packages:
       eslint: 8.39.0
       eslint-plugin-vue: 7.17.0(eslint@8.39.0)
       typescript: 5.0.3
-      vue-eslint-parser: 7.11.0(eslint@8.39.0)
+      vue-eslint-parser: 9.3.1(eslint@8.39.0)
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -21656,6 +21654,24 @@ packages:
       esquery: 1.4.0
       lodash: 4.17.21
       semver: 6.3.0
+    transitivePeerDependencies:
+      - supports-color
+    dev: true
+
+  /vue-eslint-parser@9.3.1(eslint@8.39.0):
+    resolution: {integrity: sha512-Clr85iD2XFZ3lJ52/ppmUDG/spxQu6+MAeHXjjyI4I1NUYZ9xmenQp4N0oaHJhrA8OOxltCVxMRfANGa70vU0g==}
+    engines: {node: ^14.17.0 || >=16.0.0}
+    peerDependencies:
+      eslint: '>=6.0.0'
+    dependencies:
+      debug: 4.3.4(supports-color@8.1.1)
+      eslint: 8.39.0
+      eslint-scope: 7.2.0
+      eslint-visitor-keys: 3.4.0
+      espree: 9.5.1
+      esquery: 1.5.0
+      lodash: 4.17.21
+      semver: 7.3.8
     transitivePeerDependencies:
       - supports-color
     dev: true
