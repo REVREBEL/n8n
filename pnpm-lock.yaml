@@ -908,8 +908,8 @@ importers:
         specifier: ^3.3.3
         version: 3.3.3
       dateformat:
-        specifier: ^3.0.3
-        version: 3.0.3
+        specifier: ^5.0.0
+        version: 5.0.0
       esprima-next:
         specifier: 5.8.4
         version: 5.8.4
@@ -1026,8 +1026,8 @@ importers:
         specifier: ^1.6.0
         version: 1.6.0
       '@types/dateformat':
-        specifier: ^3.0.0
-        version: 3.0.1
+        specifier: ^5.0.0
+        version: 5.0.0
       '@types/express':
         specifier: ^4.17.6
         version: 4.17.14
@@ -6164,8 +6164,8 @@ packages:
     resolution: {integrity: sha512-BG7fQKZ689HIoc5h+6D2Dgq1fABRa0RbBWKBd9SP/MVRVXROflpm5fhwyATX5duFmbStzyzyycPB8qUYKDH3NA==}
     dev: true
 
-  /@types/dateformat@3.0.1:
-    resolution: {integrity: sha512-KlPPdikagvL6ELjWsljbyDIPzNCeliYkqRpI+zea99vBBbCIA5JNshZAwQKTON139c87y9qvTFVgkFd14rtS4g==}
+  /@types/dateformat@5.0.0:
+    resolution: {integrity: sha512-SZg4JdHIWHQGEokbYGZSDvo5wA4TLYPXaqhigs/wH+REDOejcJzgH+qyY+HtEUtWOZxEUkbhbdYPqQDiEgrXeA==}
     dev: true
 
   /@types/deep-equal@1.0.1:
@@ -10326,8 +10326,9 @@ packages:
     resolution: {integrity: sha512-AsElvov3LoNB7tf5k37H2jYSB+ZZPMT5sG2QjJCcdlV5chIv6htBUBUui2IKRjgtKAKtCBN7Zbwa+MtwLjSeNw==}
     dev: true
 
-  /dateformat@3.0.3:
-    resolution: {integrity: sha512-jyCETtSl3VMZMWeRo7iY1FL19ges1t55hMo5yaam4Jrsm5EPL89UQkoQRyiI+Yf4k8r2ZpdngkV8hr1lIdjb3Q==}
+  /dateformat@5.0.0:
+    resolution: {integrity: sha512-JhEwNXpqgY85At+UuqSYNvRcurXD1L+XlE9TwaRQVuOvOKvNDJ/cSa6ioWbAWUxBXCpNlItrFr+OcA9ytba1ZA==}
+    engines: {node: '>=12.20'}
     dev: false
 
   /dayjs@1.11.6:
