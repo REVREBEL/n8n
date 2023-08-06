@@ -615,8 +615,8 @@ importers:
         specifier: ^2.0.0
         version: 2.0.0
       cron:
-        specifier: ~1.7.2
-        version: 1.7.2
+        specifier: ~2.4.0
+        version: 2.4.0
       crypto-js:
         specifier: ~4.1.1
         version: 4.1.1
@@ -670,8 +670,8 @@ importers:
         specifier: ^2.0.0
         version: 2.0.0
       '@types/cron':
-        specifier: ~1.7.1
-        version: 1.7.3
+        specifier: ~2.0.0
+        version: 2.0.0
       '@types/crypto-js':
         specifier: ^4.0.1
         version: 4.1.1
@@ -1174,8 +1174,8 @@ importers:
         specifier: 3.5.2
         version: 3.5.2
       cron:
-        specifier: ~1.7.2
-        version: 1.7.2
+        specifier: ~2.4.0
+        version: 2.4.0
       currency-codes:
         specifier: ^2.1.0
         version: 2.1.0
@@ -1451,8 +1451,8 @@ importers:
         specifier: ^0.22.15
         version: 0.22.31
       '@types/cron':
-        specifier: ~1.7.1
-        version: 1.7.3
+        specifier: ~2.0.0
+        version: 2.0.0
       '@types/eventsource':
         specifier: ^1.1.2
         version: 1.1.9
@@ -6153,11 +6153,11 @@ packages:
     resolution: {integrity: sha512-t73xJJrvdTjXrn4jLS9VSGRbz0nUY3cl2DMGDU48lKl+HR9dbbjW2A9r3g40VA++mQpy6uuHg33gy7du2BKpog==}
     dev: true
 
-  /@types/cron@1.7.3:
-    resolution: {integrity: sha512-iPmUXyIJG1Js+ldPYhOQcYU3kCAQ2FWrSkm1FJPoii2eYSn6wEW6onPukNTT0bfiflexNSRPl6KWmAIqS+36YA==}
+  /@types/cron@2.0.0:
+    resolution: {integrity: sha512-xZM08fqvwIXgghtPVkSPKNgC+JoMQ2OHazEvyTKnNf7aWu1aB6/4lBbQFrb03Td2cUGG7ITzMv3mFYnMu6xRaQ==}
     dependencies:
+      '@types/luxon': 3.2.0
       '@types/node': 16.18.12
-      moment: 2.29.4
     dev: true
 
   /@types/crypto-js@4.1.1:
@@ -10066,10 +10066,10 @@ packages:
       luxon: 3.3.0
     dev: false
 
-  /cron@1.7.2:
-    resolution: {integrity: sha512-+SaJ2OfeRvfQqwXQ2kgr0Y5pzBR/lijf5OpnnaruwWnmI799JfWr2jN2ItOV9s3A/+TFOt6mxvKzQq5F0Jp6VQ==}
+  /cron@2.4.0:
+    resolution: {integrity: sha512-Cx77ic1TyIAtUggr0oAhtS8MLzPBUqGNIvdDM7jE3oFIxfe8LXWI9q3iQN/H2CebAiMir53LQKWOhEKnzkJTAQ==}
     dependencies:
-      moment-timezone: 0.5.37
+      luxon: 3.3.0
     dev: false
 
   /cross-env@7.0.3:
@@ -16102,6 +16102,7 @@ packages:
 
   /moment@2.29.4:
     resolution: {integrity: sha512-5LC9SOxjSc2HF6vO2CyuTDNivEdoz2IvyJJGj6X8DJ0eFyfszE0QiEd+iXmBvUP3WHxSjFH/vIsA0EN00cgr8w==}
+    dev: false
 
   /mongodb-connection-string-url@2.5.4:
     resolution: {integrity: sha512-SeAxuWs0ez3iI3vvmLk/j2y+zHwigTDKQhtdxTgt5ZCOQQS5+HW4g45/Xw5vzzbn7oQXCNQ24Z40AkJsizEy7w==}
