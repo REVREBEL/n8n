@@ -106,7 +106,7 @@
     "@types/ws": "^8.5.4",
     "@types/yamljs": "^0.2.31",
     "chokidar": "^3.5.2",
-    "concurrently": "^5.1.0",
+    "concurrently": "^8.0.0",
     "lodash.debounce": "^4.0.8",
     "mock-jwks": "^1.0.9",
     "nodemon": "^2.0.2",
