@@ -819,7 +819,7 @@
     "currency-codes": "^2.1.0",
     "eventsource": "^2.0.2",
     "fast-glob": "^3.2.5",
-    "fflate": "^0.7.0",
+    "fflate": "^0.8.0",
     "formidable": "^1.2.1",
     "get-system-fonts": "^2.0.2",
     "gm": "^1.25.0",

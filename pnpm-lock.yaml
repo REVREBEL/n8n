@@ -1186,8 +1186,8 @@ importers:
         specifier: ^3.2.5
         version: 3.2.12
       fflate:
-        specifier: ^0.7.0
-        version: 0.7.4
+        specifier: ^0.8.0
+        version: 0.8.0
       formidable:
         specifier: ^1.2.1
         version: 1.2.6
@@ -12000,8 +12000,8 @@ packages:
     resolution: {integrity: sha512-uJQyMrX5IJZkhoEUBQ3EjxkeiZkppBd5jS/fMTJmfZxLSiaQjv2zD0kTvuvkSH89uFvgSlB6ueGpjD3HWN7Bxw==}
     dev: true
 
-  /fflate@0.7.4:
-    resolution: {integrity: sha512-5u2V/CDW15QM1XbbgS+0DfPxVB+jUKhWEKuuFuHncbk3tEEqzmoXL+2KyOFuKGqOnmdIy0/davWF1CkuwtibCw==}
+  /fflate@0.8.0:
+    resolution: {integrity: sha512-FAdS4qMuFjsJj6XHbBaZeXOgaypXp8iw/Tpyuq/w3XA41jjLHT8NPA+n7czH/DDhdncq0nAyDZmPeWXh2qmdIg==}
     dev: false
 
   /figures@3.2.0:
