@@ -254,8 +254,8 @@ importers:
         specifier: ^7.0.2
         version: 7.0.2
       express-openapi-validator:
-        specifier: ^4.13.6
-        version: 4.13.8
+        specifier: ^5.0.0
+        version: 5.0.0
       express-prom-bundle:
         specifier: ^6.6.0
         version: 6.6.0(prom-client@13.2.0)
@@ -7921,7 +7921,6 @@ packages:
         optional: true
     dependencies:
       ajv: 8.12.0
-    dev: true
 
   /ajv-formats@2.1.1(ajv@8.12.0):
     resolution: {integrity: sha512-Wx0Kx52hxE7C18hkMEggYlEifqWZtYaRgouJor+WMdPnQyEK13vgEWyVNup7SoeeoLMsr4kf5h6dOW11I15MUA==}
@@ -7932,7 +7931,6 @@ packages:
         optional: true
     dependencies:
       ajv: 8.12.0
-    dev: true
 
   /ajv-keywords@3.5.2(ajv@6.12.6):
     resolution: {integrity: sha512-5p6WTN0DdTGVQk6VjcEju19IgaHudalcfabD7yhDGeA6bcQnmL+CpveLJq/3hvfwd1aof6L386Ougkx6RfyMIQ==}
@@ -7975,7 +7973,6 @@ packages:
       json-schema-traverse: 1.0.0
       require-from-string: 2.0.2
       uri-js: 4.4.1
-    dev: true
 
   /amqplib@0.10.3:
     resolution: {integrity: sha512-UHmuSa7n8vVW/a5HGh2nFPqAEr8+cD4dEZ6u9GjP91nHfr1a54RyAKyra7Sb5NH7NBKOUlyQSMXIp0qAixKexw==}
@@ -11873,11 +11870,13 @@ packages:
       handlebars: 4.7.7
     dev: false
 
-  /express-openapi-validator@4.13.8:
-    resolution: {integrity: sha512-89/sdkq+BKBuIyykaMl/vR9grFc3WFUPTjFo0THHbu+5g+q8rA7fKeoMfz+h84yOQIBcztmJ5ZJdk5uhEls31A==}
+  /express-openapi-validator@5.0.0:
+    resolution: {integrity: sha512-2h0qhuwS/0vi7B68pXtTDZrXTe1kyZxG5/rvukWYcQlXL5yXMQ3H7cHnoWNY4gzCJzVsj7ciDA1S2kRiEzFsOA==}
     dependencies:
       '@types/multer': 1.4.7
-      ajv: 6.12.6
+      ajv: 8.12.0
+      ajv-draft-04: 1.0.0(ajv@8.12.0)
+      ajv-formats: 2.1.1(ajv@8.12.0)
       content-type: 1.0.4
       json-schema-ref-parser: 9.0.9
       lodash.clonedeep: 4.5.0
@@ -14863,6 +14862,7 @@ packages:
   /json-schema-ref-parser@9.0.9:
     resolution: {integrity: sha512-qcP2lmGy+JUoQJ4DOQeLaZDqH9qSkeGCK3suKWxJXS82dg728Mn3j97azDMaOUmJAN4uCq91LdPx4K7E8F1a7Q==}
     engines: {node: '>=10'}
+    deprecated: Please switch to @apidevtools/json-schema-ref-parser
     dependencies:
       '@apidevtools/json-schema-ref-parser': 9.0.9
     dev: false
