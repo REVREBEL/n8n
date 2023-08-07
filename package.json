@@ -39,7 +39,7 @@
   },
   "devDependencies": {
     "@n8n_io/eslint-config": "workspace:*",
-    "@ngneat/falso": "^6.1.0",
+    "@ngneat/falso": "^7.0.0",
     "@types/jest": "^29.5.0",
     "@types/supertest": "^2.0.12",
     "cross-env": "^7.0.3",
