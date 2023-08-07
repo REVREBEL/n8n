@@ -1008,8 +1008,8 @@ importers:
         specifier: ^7.6.0
         version: 7.6.0
       '@pinia/testing':
-        specifier: ^0.0.14
-        version: 0.0.14(pinia@2.0.23)(vue@2.7.14)
+        specifier: ^0.1.0
+        version: 0.1.0(pinia@2.0.23)(vue@2.7.14)
       '@sentry/vite-plugin':
         specifier: ^0.4.0
         version: 0.4.0
@@ -4597,10 +4597,10 @@ packages:
     engines: {node: '>=8.0.0'}
     dev: false
 
-  /@pinia/testing@0.0.14(pinia@2.0.23)(vue@2.7.14):
-    resolution: {integrity: sha512-ZmZwVNd/NnKYLIfjfuKl0zlJ3UdiXFpsHzSlL6wCeezSlyrqGMxsIQKv0J6fleu38gyCNTPBEipfxrt8V4+VIg==}
+  /@pinia/testing@0.1.0(pinia@2.0.23)(vue@2.7.14):
+    resolution: {integrity: sha512-6lcP6QvQNrFtjslppFjfnpiyRnEKrwgro/TjujLlHI8HwWbdfHfMU4BpciuLLLuuSIENIH9zrevl+eAvmUgh7A==}
     peerDependencies:
-      pinia: '>=2.0.19'
+      pinia: '>=2.0.36'
     dependencies:
       pinia: 2.0.23(typescript@5.0.3)(vue@2.7.14)
       vue-demi: 0.13.11(vue@2.7.14)
