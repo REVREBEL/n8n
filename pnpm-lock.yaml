@@ -1375,8 +1375,8 @@ importers:
         specifier: ^1.1.3
         version: 1.2.0
       node-ssh:
-        specifier: ^12.0.0
-        version: 12.0.5
+        specifier: ^13.0.0
+        version: 13.0.0
       nodemailer:
         specifier: ^6.7.1
         version: 6.8.0
@@ -16493,8 +16493,8 @@ packages:
     dependencies:
       asn1: 0.2.6
 
-  /node-ssh@12.0.5:
-    resolution: {integrity: sha512-uN2GTGdBRUUKkZmcNBr9OM+xKL6zq74emnkSyb1TshBdVWegj3boue6QallQeqZzo7YGVheP5gAovUL+8hZSig==}
+  /node-ssh@13.0.0:
+    resolution: {integrity: sha512-8yfPvuB8z1M5rXFR8Z1Tl0a0M43N64VjZfjXRwOGCcImFphuXhMPniPksf1FkVj9djKbpHvLUMIVS399H9yCSQ==}
     engines: {node: '>= 10'}
     dependencies:
       is-stream: 2.0.1
