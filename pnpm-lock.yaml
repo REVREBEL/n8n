@@ -1201,8 +1201,8 @@ importers:
         specifier: ^0.6.2
         version: 0.6.3
       ics:
-        specifier: ^2.27.0
-        version: 2.40.0
+        specifier: ^3.0.0
+        version: 3.0.0
       imap-simple:
         specifier: ^4.3.0
         version: 4.3.0
@@ -3275,13 +3275,13 @@ packages:
     engines: {node: '>=6.9.0'}
     dependencies:
       regenerator-runtime: 0.13.9
+    dev: true
 
   /@babel/runtime@7.20.7:
     resolution: {integrity: sha512-UF0tvkUtxwAgZ5W/KrkHf0Rn0fdnLDU9ScxBrEVNUprE/MzirjK4MJUX1/BVDv00Sv8cljtukVK1aky++X1SjQ==}
     engines: {node: '>=6.9.0'}
     dependencies:
       regenerator-runtime: 0.13.11
-    dev: true
 
   /@babel/standalone@7.20.12:
     resolution: {integrity: sha512-hK/X+m1il3w1tYS4H8LDaGCEdiT47SVqEXY8RiEAgou26BystipSU8ZL6EvBR6t5l7lTv0ilBiChXWblKJ5iUA==}
@@ -8495,7 +8495,7 @@ packages:
   /axios-retry@3.3.1:
     resolution: {integrity: sha512-RohAUQTDxBSWLFEnoIG/6bvmy8l3TfpkclgStjl5MDCMBDgapAWCmr1r/9harQfWC8bzLC8job6UcL1A1Yc+/Q==}
     dependencies:
-      '@babel/runtime': 7.19.4
+      '@babel/runtime': 7.20.7
       is-retry-allowed: 2.2.0
     dev: false
 
@@ -13322,8 +13322,8 @@ packages:
     dependencies:
       safer-buffer: 2.1.2
 
-  /ics@2.40.0:
-    resolution: {integrity: sha512-PPkE9ij60sGhqdTxZZzsXQPB/TCXAB/dD3NqUf1I/GkbJzPeJHHMzaoMQiYAsm1pFaHRp2OIhFDgUBihkk8s/w==}
+  /ics@3.0.0:
+    resolution: {integrity: sha512-Z6oNk8zbQADmSUvjK8DP51Q30iKsN+WIcLl00HWQ9sz/Faa5NY/XGrDJCo0reG3cwfSf9DRC4crCdrfgOoBtcw==}
     dependencies:
       nanoid: 3.3.4
       yup: 0.32.11
@@ -18552,7 +18552,6 @@ packages:
 
   /regenerator-runtime@0.13.11:
     resolution: {integrity: sha512-kY1AZVr2Ra+t+piVaJ4gxaFaReZVH40AKNo7UCX6W+dEwBo/2oZJzqfuN1qLq1oL45o56cPaTXELwrTh8Fpggg==}
-    dev: true
 
   /regenerator-runtime@0.13.9:
     resolution: {integrity: sha512-p3VT+cOEgxFsRRA9X4lkI1E+k2/CtnKtU4gcxyaCUreilL/vqI6CdZ3wxVUx3UOUg+gnUOQQcRI7BmSI656MYA==}
@@ -22643,7 +22642,7 @@ packages:
     resolution: {integrity: sha512-Z2Fe1bn+eLstG8DRR6FTavGD+MeAwyfmouhHsIUgaADz8jvFKbO/fXc2trJKZg+5EBjh4gGm3iU/t3onKlXHIg==}
     engines: {node: '>=10'}
     dependencies:
-      '@babel/runtime': 7.19.4
+      '@babel/runtime': 7.20.7
       '@types/lodash': 4.14.191
       lodash: 4.17.21
       lodash-es: 4.17.21
