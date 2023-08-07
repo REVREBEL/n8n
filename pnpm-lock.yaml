@@ -1189,8 +1189,8 @@ importers:
         specifier: ^0.7.0
         version: 0.7.4
       formidable:
-        specifier: ^1.2.1
-        version: 1.2.6
+        specifier: ^3.0.0
+        version: 3.1.3
       get-system-fonts:
         specifier: ^2.0.2
         version: 2.0.2
@@ -1460,8 +1460,8 @@ importers:
         specifier: ^4.17.6
         version: 4.17.14
       '@types/formidable':
-        specifier: ^1.0.31
-        version: 1.2.5
+        specifier: ^3.0.0
+        version: 3.4.0
       '@types/gm':
         specifier: ^1.25.0
         version: 1.25.0
@@ -6239,8 +6239,8 @@ packages:
     resolution: {integrity: sha512-frsJrz2t/CeGifcu/6uRo4b+SzAwT4NYCVPu1GN8IB9XTzrpPkGuV0tmh9mN+/L0PklAlsC3u5Fxt0ju00LXIw==}
     dev: true
 
-  /@types/formidable@1.2.5:
-    resolution: {integrity: sha512-zu3mQJa4hDNubEMViSj937602XdDGzK7Q5pJ5QmLUbNxclbo9tZGt5jtwM352ssZ+pqo5V4H14TBvT/ALqQQcA==}
+  /@types/formidable@3.4.0:
+    resolution: {integrity: sha512-JXP+LsspYYBIJJxZ9VJsswb5U1hkUUhLmtAb6EB1SWcDDbJQlWRhGoZYasMSnk2NsqtUEHd3uuaiImmSys+8AQ==}
     dependencies:
       '@types/node': 16.18.12
     dev: true
@@ -10615,6 +10615,13 @@ packages:
       - supports-color
     dev: true
 
+  /dezalgo@1.0.3:
+    resolution: {integrity: sha512-K7i4zNfT2kgQz3GylDw40ot9GAE47sFZ9EXHFSPP6zONLgH6kWXE0KWJchkbQJLBkRazq4APwZ4OwiFFlT95OQ==}
+    dependencies:
+      asap: 2.0.6
+      wrappy: 1.0.2
+    dev: false
+
   /dezalgo@1.0.4:
     resolution: {integrity: sha512-rXSP0bf+5n0Qonsb+SVVfNfIsimO4HEtmnIpPHY8Q1UCzKlQrDMfdobr8nJOOsRgWCyMRqeSBQzmWUMq7zvVig==}
     dependencies:
@@ -12324,11 +12331,6 @@ packages:
       combined-stream: 1.0.8
       mime-types: 2.1.35
 
-  /formidable@1.2.6:
-    resolution: {integrity: sha512-KcpbcpuLNOwrEjnbpMC0gS+X8ciDoZE1kkqzat4a8vrprf+s9pKNQ/QIwWfbfs4ltgmFl3MD177SNTkve3BwGQ==}
-    deprecated: 'Please upgrade to latest, formidable@v2 or formidable@v3! Check these notes: https://bit.ly/2ZEqIau'
-    dev: false
-
   /formidable@2.1.2:
     resolution: {integrity: sha512-CM3GuJ57US06mlpQ47YcunuUZ9jpm8Vx+P2CGt2j7HpgkKZO/DJYQ0Bobim8G6PFQmK5lOqOOdUXboU+h73A4g==}
     dependencies:
@@ -12337,6 +12339,14 @@ packages:
       once: 1.4.0
       qs: 6.11.0
     dev: true
+
+  /formidable@3.1.3:
+    resolution: {integrity: sha512-nPy5vK/zvhlGBvIb1RqNLAk2D3kM+Dqz9tuaVFez2fogTaYDSPPpBbJpmy2FOmPv+JN4rqQRf4C3wdg6eqV47Q==}
+    dependencies:
+      dezalgo: 1.0.3
+      hexoid: 1.0.0
+      once: 1.4.0
+    dev: false
 
   /formstream@1.1.1:
     resolution: {integrity: sha512-yHRxt3qLFnhsKAfhReM4w17jP+U1OlhUjnKPPtonwKbIJO7oBP0MvoxkRUwb8AU9n0MIkYy5X5dK6pQnbj+R2Q==}
@@ -13003,7 +13013,6 @@ packages:
   /hexoid@1.0.0:
     resolution: {integrity: sha512-QFLV0taWQOZtvIRIAdBChesmogZrtuXvVWsFHZTk2SU+anspqZ2vMnoLg7IE1+Uk16N19APic1BuF8bC8c2m5g==}
     engines: {node: '>=8'}
-    dev: true
 
   /highlight.js@10.7.3:
     resolution: {integrity: sha512-tzcUFauisWKNHaRkN4Wjl/ZA07gENAjFl3J/c480dprkGTg5EQstgaNFqBfUqCq54kZRIEcreTsAgF/m2quD7A==}
