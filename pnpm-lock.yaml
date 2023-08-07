@@ -1219,8 +1219,8 @@ importers:
         specifier: 9.0.0
         version: 9.0.0
       kafkajs:
-        specifier: ^1.14.0
-        version: 1.16.0
+        specifier: ^2.0.0
+        version: 2.0.0
       lodash.assign:
         specifier: ^4
         version: 4.2.0
@@ -14918,9 +14918,9 @@ packages:
       safe-buffer: 5.2.1
     dev: false
 
-  /kafkajs@1.16.0:
-    resolution: {integrity: sha512-+Rcfu2hyQ/jv5skqRY8xA7Ra+mmRkDAzCaLDYbkGtgsNKpzxPWiLbk8ub0dgr4EbWrN1Zb4BCXHUkD6+zYfdWg==}
-    engines: {node: '>=10.13.0'}
+  /kafkajs@2.0.0:
+    resolution: {integrity: sha512-NdDhoEJcCBx7XTqXDbolkk5UJ4Rt4XefZ1SdP2NmFF5J39+WRh1gLdqhcQfnP8bn6sw08llfjyrg2bOhONBzZQ==}
+    engines: {node: '>=14.0.0'}
     dev: false
 
   /kind-of@3.2.2:
