@@ -290,8 +290,8 @@ importers:
         specifier: ^3.0.1
         version: 3.0.1
       ldapts:
-        specifier: ^4.2.2
-        version: 4.2.2
+        specifier: ^6.0.0
+        version: 6.0.0
       localtunnel:
         specifier: ^2.0.0
         version: 2.0.2
@@ -6023,6 +6023,13 @@ packages:
     resolution: {integrity: sha512-5TMxIpYbIA9c1J0hYQjQDX3wr+rTgQEAXaW2BI8ECM8FO53wSW4HFZplTalrKSHuZUc76NtXcePRhwuOHqGD5g==}
     dependencies:
       '@types/node': 16.18.12
+    dev: true
+
+  /@types/asn1@0.2.1:
+    resolution: {integrity: sha512-MgrOWeBGvb9CU43AOMvrr7laqiATS4dApdqnmXl4MLxH6rSXcjSoh12y/9YGv/7Cn63cob5xQjcxVvjnOLmrmw==}
+    dependencies:
+      '@types/node': 16.18.12
+    dev: false
 
   /@types/aws4@1.11.2:
     resolution: {integrity: sha512-x0f96eBPrCCJzJxdPbUvDFRva4yPpINJzTuXXpmS2j9qLUpF2nyGzvXPlRziuGbCsPukwY4JfuO+8xwsoZLzGw==}
@@ -15002,11 +15009,11 @@ packages:
       invert-kv: 1.0.0
     dev: true
 
-  /ldapts@4.2.2:
-    resolution: {integrity: sha512-UHe7BtEhPUFHZZ6XHnRvLHWQrftTap3PgGU0nOLtrFeigZvfpXSsqJ8C9uXNouDV+iDHqoWwplS0eHoDu/GIEQ==}
-    engines: {node: '>=14'}
+  /ldapts@6.0.0:
+    resolution: {integrity: sha512-VI0+pXgs8Ul135oM0SV0LfQj0Ljj0IgktzAIf2aNUBvmu8mIm/Y5ZugwsP+s47is6rd7uX5i9CeQG0t3Y60OAw==}
+    engines: {node: '>=16'}
     dependencies:
-      '@types/asn1': 0.2.0
+      '@types/asn1': 0.2.1
       '@types/node': 16.18.12
       '@types/uuid': 9.0.0
       asn1: 0.2.6
