@@ -808,7 +808,7 @@
     "n8n-core": "workspace:*"
   },
   "dependencies": {
-    "@kafkajs/confluent-schema-registry": "1.0.6",
+    "@kafkajs/confluent-schema-registry": "3.3.0",
     "amqplib": "^0.10.3",
     "aws4": "^1.8.0",
     "basic-auth": "^2.0.1",
