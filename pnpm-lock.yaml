@@ -362,8 +362,8 @@ importers:
         specifier: ^7.0.0
         version: 7.4.2
       openapi-types:
-        specifier: ^10.0.0
-        version: 10.0.0
+        specifier: ^12.0.0
+        version: 12.0.0
       p-cancelable:
         specifier: ^2.0.0
         version: 2.1.1
@@ -454,7 +454,7 @@ importers:
     devDependencies:
       '@apidevtools/swagger-cli':
         specifier: 4.0.4
-        version: 4.0.4(openapi-types@10.0.0)
+        version: 4.0.4(openapi-types@12.0.0)
       '@oclif/dev-cli':
         specifier: ^1.22.2
         version: 1.26.10
@@ -1784,12 +1784,12 @@ packages:
     engines: {node: '>=10'}
     dev: true
 
-  /@apidevtools/swagger-cli@4.0.4(openapi-types@10.0.0):
+  /@apidevtools/swagger-cli@4.0.4(openapi-types@12.0.0):
     resolution: {integrity: sha512-hdDT3B6GLVovCsRZYDi3+wMcB1HfetTU20l2DC8zD3iFRNMC6QNAZG5fo/6PYeHWBEv7ri4MvnlKodhNB0nt7g==}
     engines: {node: '>=10'}
     hasBin: true
     dependencies:
-      '@apidevtools/swagger-parser': 10.1.0(openapi-types@10.0.0)
+      '@apidevtools/swagger-parser': 10.1.0(openapi-types@12.0.0)
       chalk: 4.1.2
       js-yaml: 3.14.1
       yargs: 15.4.1
@@ -1801,7 +1801,7 @@ packages:
     resolution: {integrity: sha512-QAkD5kK2b1WfjDS/UQn/qQkbwF31uqRjPTrsCs5ZG9BQGAkjwvqGFjjPqAuzac/IYzpPtRzjCP1WrTuAIjMrXg==}
     dev: true
 
-  /@apidevtools/swagger-parser@10.1.0(openapi-types@10.0.0):
+  /@apidevtools/swagger-parser@10.1.0(openapi-types@12.0.0):
     resolution: {integrity: sha512-9Kt7EuS/7WbMAUv2gSziqjvxwDbFSg3Xeyfuj5laUODX8o/k/CpsAKiQ8W7/R88eXFTMbJYg6+7uAmOWNKmwnw==}
     peerDependencies:
       openapi-types: '>=7'
@@ -1813,7 +1813,7 @@ packages:
       ajv: 8.12.0
       ajv-draft-04: 1.0.0(ajv@8.12.0)
       call-me-maybe: 1.0.1
-      openapi-types: 10.0.0
+      openapi-types: 12.0.0
     dev: true
 
   /@authenio/xml-encryption@2.0.2:
@@ -16838,8 +16838,8 @@ packages:
       is-docker: 2.2.1
       is-wsl: 2.2.0
 
-  /openapi-types@10.0.0:
-    resolution: {integrity: sha512-Y8xOCT2eiKGYDzMW9R4x5cmfc3vGaaI4EL2pwhDmodWw1HlK18YcZ4uJxc7Rdp7/gGzAygzH9SXr6GKYIXbRcQ==}
+  /openapi-types@12.0.0:
+    resolution: {integrity: sha512-6Wd9k8nmGQHgCbehZCP6wwWcfXcvinhybUTBatuhjRsCxUIujuYFZc9QnGeae75CyHASewBtxs0HX/qwREReUw==}
 
   /openurl@1.1.1:
     resolution: {integrity: sha512-d/gTkTb1i1GKz5k3XE3XFV/PxQ1k45zDqGP2OA7YhgsaLoqm6qRvARAZOFer1fcXritWlGBRCu/UgeS4HAnXAA==}
