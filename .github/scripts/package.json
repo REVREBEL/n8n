@@ -1,6 +1,6 @@
 {
   "dependencies": {
     "semver": "^7.3.8",
-    "conventional-changelog-cli": "^2.2.2"
+    "conventional-changelog-cli": "^3.0.0"
   }
 }
