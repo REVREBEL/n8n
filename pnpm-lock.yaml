@@ -1011,8 +1011,8 @@ importers:
         specifier: ^0.1.0
         version: 0.1.0(pinia@2.0.23)(vue@2.7.14)
       '@sentry/vite-plugin':
-        specifier: ^0.4.0
-        version: 0.4.0
+        specifier: ^0.7.0
+        version: 0.7.0
       '@testing-library/jest-dom':
         specifier: ^5.16.5
         version: 5.16.5
@@ -4699,15 +4699,18 @@ packages:
       tslib: 2.5.0
     dev: true
 
-  /@sentry/bundler-plugin-core@0.4.0:
-    resolution: {integrity: sha512-Xi+dqaSOoxbdmxegX7f66FVOxm2dVJLmrMXUpoNyuV6ASoccRWzouGaFekP059SUTTD05ytk1mHqwgVuBCA0Dw==}
+  /@sentry/bundler-plugin-core@0.7.0:
+    resolution: {integrity: sha512-ip2p5oFUGc6qxIfo7hdydxdjn8LMvoRaoHdZCI2QQzFYBpSMI65rPBF9E/kdeKOeKXJEu5o57/TgNw0LWdiK4A==}
     engines: {node: '>= 10'}
     dependencies:
       '@sentry/cli': 2.17.0(patch_hash=nchnoezkq6p37qaiku3vrpwraq)
       '@sentry/node': 7.28.1
       '@sentry/tracing': 7.47.0
+      find-up: 5.0.0
+      glob: 9.3.2
       magic-string: 0.27.0
       unplugin: 1.0.1
+      webpack-sources: 3.2.3
     transitivePeerDependencies:
       - encoding
       - supports-color
@@ -4801,11 +4804,11 @@ packages:
       tslib: 2.5.0
     dev: true
 
-  /@sentry/vite-plugin@0.4.0:
-    resolution: {integrity: sha512-dBxM00MCLzO/idzAqj33ZfbIBKZxP+FzpxtS2WaV0yzad9yLBAFZ/VGDIGHQJC0Qo3fsFi/CZpmN39wJkJoWFA==}
+  /@sentry/vite-plugin@0.7.0:
+    resolution: {integrity: sha512-xGSyLcBTKcFs+Z8xFnjAuaU9JMQ4kFxisX3QoqWZDz9iU6ds6z1+zP9cRtzq6+oTwzmIO2Favfly/oci3FUTQw==}
     engines: {node: '>= 10'}
     dependencies:
-      '@sentry/bundler-plugin-core': 0.4.0
+      '@sentry/bundler-plugin-core': 0.7.0
     transitivePeerDependencies:
       - encoding
       - supports-color
@@ -12806,6 +12809,16 @@ packages:
       path-scurry: 1.6.2
     dev: false
 
+  /glob@9.3.2:
+    resolution: {integrity: sha512-BTv/JhKXFEHsErMte/AnfiSv8yYOLLiyH2lTg8vn02O21zWFgHPTfxtgn1QRe7NRgggUhC8hacR2Re94svHqeA==}
+    engines: {node: '>=16 || 14 >=14.17'}
+    dependencies:
+      fs.realpath: 1.0.0
+      minimatch: 7.4.2
+      minipass: 4.2.5
+      path-scurry: 1.6.2
+    dev: true
+
   /global-dirs@3.0.0:
     resolution: {integrity: sha512-v8ho2DS5RiCjftj1nD9NmnfaOzTdud7RRnVd9kFNOjqZbISlx5DQ+OrTkywgd0dIt7oFCvKetZSHoHcP3sDdiA==}
     engines: {node: '>=10'}
@@ -15686,7 +15699,6 @@ packages:
   /lru-cache@7.18.3:
     resolution: {integrity: sha512-jumlc0BIUrS3qJGgIkWZsyfAM7NCWiBcCDhnd+3NNM5KbBmLTgHVfWBcg6W+rLUsIpzpERPsvwUP7CckAQSOoA==}
     engines: {node: '>=12'}
-    dev: false
 
   /lru-memoizer@2.1.4:
     resolution: {integrity: sha512-IXAq50s4qwrOBrXJklY+KhgZF+5y98PDaNo0gi/v2KQBFLyWr+JyFvijZXkGKjQj/h9c0OwoE+JZbwUXce76hQ==}
@@ -16041,7 +16053,6 @@ packages:
     engines: {node: '>=10'}
     dependencies:
       brace-expansion: 2.0.1
-    dev: false
 
   /minimist@1.2.7:
     resolution: {integrity: sha512-bzfL1YUZsP41gmu/qjrEk0Q6i2ix/cVeAhbCbqH9u3zYutS1cLg00qhrD0M2MVdCcx4Sc0UpP2eBWo9rotpq6g==}
@@ -17356,7 +17367,6 @@ packages:
     dependencies:
       lru-cache: 7.18.3
       minipass: 4.2.5
-    dev: false
 
   /path-to-regexp@0.1.7:
     resolution: {integrity: sha512-5DFkuoqlv1uYQKxy8omFBeJPQcdoE07Kv2sferDCrAq1ohOU+MSDswDIbnx3YAM60qIOnYa53wBhXW0EbMonrQ==}
