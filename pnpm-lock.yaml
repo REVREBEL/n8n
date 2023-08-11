@@ -1204,8 +1204,8 @@ importers:
         specifier: ^3.0.0
         version: 3.0.0
       imap-simple:
-        specifier: ^4.3.0
-        version: 4.3.0
+        specifier: ^5.0.0
+        version: 5.0.0
       isbot:
         specifier: ^3.3.4
         version: 3.6.1
@@ -13368,8 +13368,9 @@ packages:
     resolution: {integrity: sha512-MAb38BcSbH0eHNBxn7ql2NH/kX33OkB3lZ1BNdh7ENeRChHTYsTvWrMubiIAMNS2llXEEgZ1MUOBtXChP3kaFQ==}
     engines: {node: '>= 4'}
 
-  /imap-simple@4.3.0:
-    resolution: {integrity: sha512-SW3LtfEJFjlJKS/h2CmpX2IKpya2RXobR3ENJJW4iMQ3QYPxWxf5oeaz1K3P4eGUwfGEndkqt7uVDKnEyG9zeQ==}
+  /imap-simple@5.0.0:
+    resolution: {integrity: sha512-/wLRwy8tmKdzacVDOZUeD05GkqIax38tEFwAToFB2Jhb7zfmGdaxzYWOvPZi2t6kumrjNhSyt5BstCemKzcV+A==}
+    engines: {node: '>=6'}
     dependencies:
       iconv-lite: 0.4.24
       imap: 0.8.19
