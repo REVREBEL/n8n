@@ -17,7 +17,7 @@
     "eslint-plugin-prettier": "~4.2",
     "eslint-plugin-unicorn": "~46.0",
     "eslint-plugin-unused-imports": "~3.0.0",
-    "eslint-plugin-vue": "~7.17"
+    "eslint-plugin-vue": "~7.20.0"
   },
   "scripts": {
     "clean": "rimraf .turbo",

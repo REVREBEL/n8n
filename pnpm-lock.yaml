@@ -129,7 +129,7 @@ importers:
         version: 5.59.0(eslint@8.39.0)(typescript@5.0.3)
       '@vue/eslint-config-typescript':
         specifier: ~8.0
-        version: 8.0.0(@typescript-eslint/eslint-plugin@5.59.0)(@typescript-eslint/parser@5.59.0)(eslint-plugin-vue@7.17.0)(eslint@8.39.0)(typescript@5.0.3)
+        version: 8.0.0(@typescript-eslint/eslint-plugin@5.59.0)(@typescript-eslint/parser@5.59.0)(eslint-plugin-vue@7.20.0)(eslint@8.39.0)(typescript@5.0.3)
       eslint:
         specifier: ~8.39
         version: 8.39.0
@@ -161,8 +161,8 @@ importers:
         specifier: ~3.0.0
         version: 3.0.0(@typescript-eslint/eslint-plugin@5.59.0)(eslint@8.39.0)
       eslint-plugin-vue:
-        specifier: ~7.17
-        version: 7.17.0(eslint@8.39.0)
+        specifier: ~7.20.0
+        version: 7.20.0(eslint@8.39.0)
 
   packages/cli:
     dependencies:
@@ -7604,7 +7604,7 @@ packages:
   /@vue/devtools-api@6.4.5:
     resolution: {integrity: sha512-JD5fcdIuFxU4fQyXUu3w2KpAJHzTVdN+p4iOX2lMWSHMOoQdMAcpFLZzm9Z/2nmsoZ1a96QEhZ26e50xLBsgOQ==}
 
-  /@vue/eslint-config-typescript@8.0.0(@typescript-eslint/eslint-plugin@5.59.0)(@typescript-eslint/parser@5.59.0)(eslint-plugin-vue@7.17.0)(eslint@8.39.0)(typescript@5.0.3):
+  /@vue/eslint-config-typescript@8.0.0(@typescript-eslint/eslint-plugin@5.59.0)(@typescript-eslint/parser@5.59.0)(eslint-plugin-vue@7.20.0)(eslint@8.39.0)(typescript@5.0.3):
     resolution: {integrity: sha512-8u8Qpg4qfjJoNeRMdHlxif9BcGy4iYSSK4YYW5AFPPRtkBJiCqtoyT72l4F3ZeZII09ax2N6yQeHbQ0CXQi1bA==}
     engines: {node: ^10.12.0 || >=12.0.0}
     peerDependencies:
@@ -7620,7 +7620,7 @@ packages:
       '@typescript-eslint/eslint-plugin': 5.59.0(patch_hash=tk3n6hvmqwfzrfqe3awfxnqtuy)(@typescript-eslint/parser@5.59.0)(eslint@8.39.0)(typescript@5.0.3)
       '@typescript-eslint/parser': 5.59.0(eslint@8.39.0)(typescript@5.0.3)
       eslint: 8.39.0
-      eslint-plugin-vue: 7.17.0(eslint@8.39.0)
+      eslint-plugin-vue: 7.20.0(eslint@8.39.0)
       typescript: 5.0.3
       vue-eslint-parser: 7.11.0(eslint@8.39.0)
     transitivePeerDependencies:
@@ -11520,11 +11520,11 @@ packages:
       eslint-rule-composer: 0.3.0
     dev: true
 
-  /eslint-plugin-vue@7.17.0(eslint@8.39.0):
-    resolution: {integrity: sha512-Rq5R2QetDCgC+kBFQw1+aJ5B93tQ4xqZvoCUxuIzwTonngNArsdP8ChM8PowIzsJvRtWl4ltGh/bZcN3xhFWSw==}
+  /eslint-plugin-vue@7.20.0(eslint@8.39.0):
+    resolution: {integrity: sha512-oVNDqzBC9h3GO+NTgWeLMhhGigy6/bQaQbHS+0z7C4YEu/qK/yxHvca/2PTZtGNPsCrHwOTgKMrwu02A9iPBmw==}
     engines: {node: '>=8.10'}
     peerDependencies:
-      eslint: ^6.2.0 || ^7.0.0 || ^8.0.0-0
+      eslint: ^6.2.0 || ^7.0.0 || ^8.0.0
     dependencies:
       eslint: 8.39.0
       eslint-utils: 2.1.0
@@ -11671,13 +11671,6 @@ packages:
     resolution: {integrity: sha512-eGuFFw7Upda+g4p+QHvnW0RyTX/SVeJBDM/gCtMARO0cLuT2HcEKnTPvhjV6aGeqrCB/sbNop0Kszm0jsaWU4A==}
     engines: {node: '>=4'}
     hasBin: true
-
-  /esquery@1.4.0:
-    resolution: {integrity: sha512-cCDispWt5vHHtwMY2YrAQ4ibFkAL8RbH5YGBnZBc90MolvvfkkQcJro/aZiAQUlQ3qgrYS6D6v8Gc5G5CQsc9w==}
-    engines: {node: '>=0.10'}
-    dependencies:
-      estraverse: 5.3.0
-    dev: true
 
   /esquery@1.5.0:
     resolution: {integrity: sha512-YQLXUplAwJgCydQ78IMJywZCceoqk1oH01OERdSAJc/7U2AylwjhSCLDEtqwg811idIS/9fIU5GjG73IgjKMVg==}
@@ -21857,7 +21850,7 @@ packages:
       eslint-scope: 5.1.1
       eslint-visitor-keys: 1.3.0
       espree: 6.2.1
-      esquery: 1.4.0
+      esquery: 1.5.0
       lodash: 4.17.21
       semver: 6.3.0
     transitivePeerDependencies:
