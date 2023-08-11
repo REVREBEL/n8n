@@ -1661,8 +1661,8 @@ importers:
         specifier: ^4.0.0
         version: 4.0.0
       ast-types:
-        specifier: 0.15.2
-        version: 0.15.2
+        specifier: 0.16.1
+        version: 0.16.1
       crypto-js:
         specifier: ^4.1.1
         version: 4.1.1
@@ -8368,7 +8368,6 @@ packages:
     engines: {node: '>=4'}
     dependencies:
       tslib: 2.5.0
-    dev: true
 
   /astral-regex@2.0.0:
     resolution: {integrity: sha512-Z7tMw1ytTXt5jqMcOP+OQteU1VuNK9Y02uuJtKQ1Sv69jXQKKg5cibLwGJow8yzZP+eAc18EmLGPal0bp36rvQ==}
