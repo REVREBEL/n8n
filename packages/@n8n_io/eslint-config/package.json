@@ -15,7 +15,7 @@
     "eslint-plugin-import": "~2.27",
     "eslint-plugin-n8n-local-rules": "~1.0",
     "eslint-plugin-prettier": "~4.2",
-    "eslint-plugin-unicorn": "~46.0",
+    "eslint-plugin-unicorn": "~48.0.0",
     "eslint-plugin-unused-imports": "~3.0.0",
     "eslint-plugin-vue": "~7.17"
   },
