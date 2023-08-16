@@ -108,7 +108,7 @@
     "chokidar": "^3.5.2",
     "concurrently": "^5.1.0",
     "lodash.debounce": "^4.0.8",
-    "mock-jwks": "^1.0.9",
+    "mock-jwks": "^3.0.0",
     "nodemon": "^2.0.2",
     "run-script-os": "^1.0.7",
     "ts-essentials": "^7.0.3",
