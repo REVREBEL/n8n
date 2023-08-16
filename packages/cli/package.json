@@ -109,7 +109,7 @@
     "concurrently": "^5.1.0",
     "lodash.debounce": "^4.0.8",
     "mock-jwks": "^1.0.9",
-    "nodemon": "^2.0.2",
+    "nodemon": "^3.0.0",
     "run-script-os": "^1.0.7",
     "ts-essentials": "^7.0.3",
     "tsc-alias": "^1.8.2",
