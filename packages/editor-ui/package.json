@@ -102,7 +102,7 @@
     "@types/lodash.set": "^4.3.6",
     "@types/luxon": "^3.2.0",
     "@types/uuid": "^8.3.2",
-    "@vitejs/plugin-legacy": "^3.0.1",
+    "@vitejs/plugin-legacy": "^4.0.0",
     "@vitejs/plugin-vue2": "^2.2.0",
     "@vitest/coverage-c8": "^0.28.5",
     "@volar-plugins/eslint": "^0.0.4",
